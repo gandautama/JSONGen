@@ -19,6 +19,10 @@ public class JSONStringBuilder {
 		isReadEof = false;
 	}
 	
+	public BufferedWriter getWriter(){
+		return fileWriter;
+	}
+	
 	public void createOutFile(String filename) throws IOException{
 			fileWriter = new BufferedWriter(
                     new FileWriter(filename));
@@ -63,24 +67,15 @@ public class JSONStringBuilder {
 		return content;
 	}
 	
-	public void closeOutFile() {
+	public void closeOutFile() throws IOException {
 		if (fileWriter == null) return;
-		try {
 			fileWriter.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
-	public void closeInFile(){
+	public void closeInFile() throws IOException{
 		if (fileReader == null) return;
-		try {
 			fileReader.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 	
 
