@@ -47,7 +47,9 @@ public class JSONConvert {
 						break;
 					}
 					String contentsArr[] = myStr.split("\t");
+					if (contentsArr.length<1) continue;
 					jg.writeStartObject();
+					
 					for(int  contentsIdx=0 ; contentsIdx <contentsArr.length ; contentsIdx++){
 						jg.write(headersArr[contentsIdx],contentsArr[contentsIdx]) ;
 					}
