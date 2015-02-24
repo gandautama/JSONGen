@@ -8,12 +8,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class JSONStringBuilder {
+public class JSONStream {
 	BufferedWriter fileWriter;
 	BufferedReader fileReader;
 	boolean isReadEof;
            
-	public JSONStringBuilder(){
+	public JSONStream(){
 		fileWriter = null;
 		fileReader = null;
 		isReadEof = false;
@@ -26,11 +26,9 @@ public class JSONStringBuilder {
 	public void createOutFile(String filename) throws IOException{
 			fileWriter = new BufferedWriter(
                     new FileWriter(filename));
-
 	}
 	
 	public void openTextFile(String filename) throws FileNotFoundException{
-
 			fileReader = new BufferedReader(
 			        new FileReader(filename));
 	}
@@ -75,9 +73,5 @@ public class JSONStringBuilder {
 	public void closeInFile() throws IOException{
 		if (fileReader == null) return;
 			fileReader.close();
-
 	}
-	
-
-	
 }
